@@ -1,1 +1,370 @@
+<!doctype html>
+<html lang="en">
 
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Carinne Tzurdecker — Automation Engineer (Mobile Replica)</title>
+    <style>
+        :root {
+            --bg: #fff2e0;
+            --ink: #141417;
+            --muted: #6b6b6b;
+            --accent: #c0c9ee;
+            --accent-ink: #0f1220;
+            --line: #ece6d6;
+            --pill: #f6f2e8;
+            --radius: 18px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial;
+            line-height: 1.4;
+            color: var(--ink);
+            background:
+                linear-gradient(90deg, transparent 24px, rgba(231, 225, 207, .4) 24px, rgba(231, 225, 207, .4) 25px, transparent 25px) 0 0 / 40px 40px,
+                linear-gradient(transparent 24px, rgba(231, 225, 207, .4) 24px, rgba(231, 225, 207, .4) 25px, transparent 25px) 0 0 / 40px 40px,
+                var(--bg);
+        }
+
+        .page {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+
+        .section {
+            background: #ffffffcc;
+            backdrop-filter: saturate(120%) blur(2px);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 18px;
+            margin: 12px 0;
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 14px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: var(--accent);
+            color: var(--accent-ink);
+            font-weight: 600;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .title {
+            margin: 10px 0 0;
+            font-size: 34px;
+            line-height: 1.05;
+        }
+
+        .subtitle {
+            color: var(--muted);
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .avatar {
+            width: 108px;
+            height: 108px;
+            border-radius: 50%;
+            border: 4px solid #e8dcc7;
+            box-shadow: inset 0 0 0 2px #fff;
+            background: radial-gradient(closest-side, #f8f3ea, #efe6d3);
+            position: relative;
+        }
+
+        .about p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .pill {
+            padding: 10px 14px;
+            border-radius: 999px;
+            background: var(--pill);
+            border: 1px solid var(--line);
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        .work-item {
+            margin-bottom: 20px;
+        }
+
+        .work-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .work-title {
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .work-date {
+            background: var(--accent);
+            color: var(--accent-ink);
+            font-size: 14px;
+            padding: 4px 10px;
+            border-radius: 10px;
+        }
+
+        .work-desc {
+            color: var(--muted);
+            margin: 8px 0;
+            font-size: 15px;
+        }
+
+        @media (min-width: 680px) {
+            .title {
+                font-size: 44px;
+            }
+
+            .subtitle {
+                font-size: 18px;
+            }
+
+            .avatar {
+                width: 128px;
+                height: 128px;
+            }
+        }
+
+        /* Small helper class so long date badges don’t squish titles on tiny screens */
+        @media (max-width: 380px) {
+            .date-badge {
+                font-size: 12px !important;
+            }
+
+            .exp-head h3 {
+                font-size: 17px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="page">
+
+        <!-- HERO -->
+        <section class="section">
+            <div class="hero">
+                <div>
+                    <span class="badge">Automation Engineer</span>
+                    <h1 class="title">Hello, I’m<br>Carinne Tzurdecker</h1>
+                    <p class="subtitle">Building automation that quietly powers teams—clean UX up front, durable ops in
+                        the back.</p>
+                </div>
+                <div class="avatar"></div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="section">
+            <h2 style="margin:0 0 10px 0; font-size:18px;">ABOUT MY WORK</h2>
+            <div class="about">
+                <p>Automation‑focused engineer building seamless systems that keep companies running smoothly. Strong
+                    with Make, n8n, JSON workflows; driven by measurable results and hands‑off ops.</p>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="section">
+            <h2 style="margin:0 0 12px 0; font-size:18px;">SKILLS</h2>
+            <div class="skills" id="skills"></div>
+        </section>
+
+        <!-- WORK EXPERIENCE -->
+        <section class="section">
+            <h2 style="margin:0 0 16px 0; font-size:18px;">WORK EXPERIENCE</h2>
+
+            <div class="work-item">
+                <div class="work-header">
+                    <div class="work-title">Automation Engineer — Rankey</div>
+                    <div class="work-date">May 2025 – Present</div>
+                </div>
+                <p class="work-desc">Built an AI automation that plans, writes, images, posts, and logs weekly content
+                    across multiple WordPress sites with retries, logging, and per‑client configs.</p>
+                <div class="skills">
+                    <span class="pill">Make</span><span class="pill">API Integration</span><span
+                        class="pill">JSON</span><span class="pill">Workflow Design</span><span class="pill">Automation
+                        Design</span><span class="pill">Process Automation</span><span class="pill">Prompt
+                        Engineering</span><span class="pill">Technical Presentation</span>
+                </div>
+            </div>
+
+            <div class="work-item">
+                <div class="work-header">
+                    <div class="work-title">Startup Founder — BuildHer</div>
+                    <div class="work-date">July 2025 – Present</div>
+                </div>
+                <p class="work-desc">Websites for strength coaches/teams: onboarding, training plans, results, and
+                    scheduling.</p>
+                <div class="skills">
+                    <span class="pill">Sales</span><span class="pill">Web Design</span><span
+                        class="pill">HTML</span><span class="pill">JavaScript</span><span class="pill">CSS</span><span
+                        class="pill">JSON</span><span class="pill">GitHub</span><span class="pill">Client
+                        Lifecycle</span>
+                </div>
+            </div>
+
+            <div class="work-item">
+                <div class="work-header">
+                    <div class="work-title">Poozle — Frontend Intern</div>
+                    <div class="work-date">Jun 2024 – Jan 2025</div>
+                </div>
+                <p class="work-desc">Sign‑in page, interactive job cards, and Google Location API for onboarding.</p>
+                <div class="skills">
+                    <span class="pill">React Native</span><span class="pill">Expo</span><span
+                        class="pill">HTML</span><span class="pill">CSS</span><span class="pill">JavaScript</span><span
+                        class="pill">Node.js</span><span class="pill">GitHub</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="section" aria-labelledby="projects-heading">
+            <h2 id="projects-heading" style="margin:0 0 16px 0; font-size:18px;">PROJECTS</h2>
+            <div class="work-item">
+                <div class="work-header">
+                    <div class="work-title">SEO Content AI Agent</div>
+                                <span class="work-date">2025</span>
+
+                            </div>
+                <p class="work-desc" style="margin:8px 0 10px 0; color:var(--muted);">End‑to‑end weekly publishing: keyword plan → draft → image → schedule/post → logging.</p>
+                <button class="pill" style="cursor:pointer; background:#f6f2e8; border:1px solid var(--line); font-family:inherit; color:inherit; box-shadow:0 2px 8px rgba(0,0,0,0.12);">Click to
+                    view</button>
+
+            </div>
+
+            <div class="work-item">
+                <div class="work-header">
+                    <div class="work-title">BuildHer — Client Site</div>
+                <span class="work-date">2025</span>
+                </div>
+                <p class="work-desc" style="margin:8px 0 10px 0; color:var(--muted);">Custom site for a powerlifting coach: programs, results, onboarding, tracking, scheduling.</p>
+            <button class="pill"
+                style="cursor:pointer; background:#f6f2e8; border:1px solid var(--line); font-family:inherit; color:inherit; box-shadow:0 2px 8px rgba(0,0,0,0.12);">Click
+                to
+                view</button>
+
+            </div>
+
+            <div class="work-item">
+                <div class="work-header">
+                    <div class="work-title">KSU Club Barbell Official Site</div>
+                    <span class="work-date">2023</span>
+                </div>
+                <p class="work-desc" style="margin:8px 0 10px 0; color:var(--muted);">Join the club, merch, mission/team, events.</p>
+            <button class="pill"
+                style="cursor:pointer; background:#f6f2e8; border:1px solid var(--line); font-family:inherit; color:inherit; box-shadow:0 2px 8px rgba(0,0,0,0.12);">Click
+                to
+                view</button>            </div>
+        </section>
+                <!-- EDUCATION -->
+                <section class="section" aria-labelledby="education-heading">
+                    <h2 id="education-heading" style="margin:0 0 16px 0; font-size:18px;">EDUCATION</h2>
+                    <div class="work-item">
+                        <div class="work-header">
+                            <div class="work-title">B.S. Computer Science -</div>
+                            <span class="work-date">2022–2025</span>
+                        </div>
+                        <p class="work-desc" style="margin:1px 0 5px 0; color:var(--muted); ">Concentration in A.I.</p>
+                        <p class="work-desc" style="margin:4px 0 0px 0; color:var(--muted); font-weight: 200; font-style: italic; font-size: 13px;">Kennesaw State University</p>
+                        <p class="work-desc" style="margin:1px 0 10px 0; color:var(--muted); font-weight: 200; font-style: italic; font-size: 13px;">College of Computing and Software Engineering</p>
+                </section>
+                
+                <!-- CERTIFICATION -->
+                <section class="section" aria-labelledby="certification-heading">
+                    <h2 id="certification-heading" style="margin:0 0 16px 0; font-size:18px;">CERTIFICATION</h2>
+                    <div class="work-item">
+                        <div class="work-header">
+                            <div class="work-title">Make.com</div>
+                            <span class="work-date">2025</span>
+                        </div>
+                        <p class="work-desc" style="margin:8px 0 10px 0; color:var(--muted);">Automation Engineering</p>
+                    </div>
+                    <div class="work-item">
+                        <div class="work-header">
+                            <div class="work-title">SheCodes</div>
+                            <span class="work-date">2022</span>
+                        </div>
+                        <p class="work-desc" style="margin:8px 0 10px 0; color:var(--muted);">Frontend Basics</p>
+                    </div>
+                </section>
+                        <!-- REFERENCES -->
+                        <section class="section">
+                            <h2 style="margin:0 0 16px 0; font-size:18px;">REFERENCES</h2>
+                        
+                            <div class="work-item" style="padding:12px; border:1px solid var(--line); border-radius:12px; margin-bottom:12px;">
+                                <div class="work-title" style="font-weight:700;">Julian Trumper</div>
+                                <p class="work-desc" style="margin:4px 0;">Rankey Founder</p>
+                                <p class="work-desc" style="margin:0; font-size:14px; color:var(--muted);">nabeel@example.com</p>
+                            </div>
+                        
+                            <div class="work-item" style="padding:12px; border:1px solid var(--line); border-radius:12px;">
+                                <div class="work-title" style="font-weight:700;">Peter Thompkins</div>
+                                <p class="work-desc" style="margin:4px 0;">Current Employer: Hospitality</p>
+                                <p class="work-desc" style="margin:0; font-size:14px; color:var(--muted);">hhanzala@example.com</p>
+                            </div>
+                        </section>
+                        
+                        <!-- MORE OF ME -->
+                        <section class="section">
+                            <h2 style="margin:0 0 16px 0; font-size:18px;">MORE OF ME</h2>
+                            <div class="work-item" style="display:flex; flex-direction:column; gap:12px;">
+                                <button class="pill" style="width:100%; text-align:center; background:#fff;">LinkedIn</button>
+                                <button class="pill" style="width:100%; text-align:center; background:#fff;">GitHub</button>
+                                <button class="pill" style="width:100%; text-align:center; background:#fff;">Facebook</button>
+                                <button class="pill" style="width:100%; text-align:center; background:#fff;">Instagram</button>
+                            </div>
+                        </section>
+
+
+    </main>
+
+    <script>
+        const skills = [
+            'HTML', 'CSS', 'JS', 'React', 'GitHub', 'Python', 'Java', 'JSON', 'API Integration', 'Make / n8n', 'Workflow Design', 'Web Design'
+        ];
+        const frag = document.createDocumentFragment();
+        skills.forEach(txt => {
+            const el = document.createElement('span');
+            el.className = 'pill';
+            el.textContent = txt;
+            frag.appendChild(el);
+        });
+        document.getElementById('skills').appendChild(frag);
+    </script>
+</body>
+
+</html>
